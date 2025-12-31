@@ -23,8 +23,12 @@ def main():
             if event.type == pygame.QUIT:
                 return
 
+        # Do stuff on the screen before updating
         screen.fill("black")
         player.draw(screen)
+        player.update(dt) # Update rotation based on dt
+
+        # Update the contents of the display
         pygame.display.flip()
         
         # Cap at 60 fps
