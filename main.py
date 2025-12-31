@@ -13,6 +13,11 @@ def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT)) 
     clock = pygame.time.Clock()
     dt = 0.0 # delta time in seconds
+
+    updatable = pygame.sprite.Group()
+    drawable = pygame.sprite.Group()
+    # Add all future instances of player to updatable and drawable groups
+    Player.containers = (updatable, drawable)
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
     while True:
@@ -25,8 +30,13 @@ def main():
 
         # Do stuff on the screen before updating
         screen.fill("black")
-        player.draw(screen)
-        player.update(dt) # Update rotation based on dt
+        
+        # Update rotaion based on dt
+        updatable.update(dt) 
+
+        # Draw objects in drawable group
+        for d in drawable:
+            d.draw(screen)
 
         # Update the contents of the display
         pygame.display.flip()
