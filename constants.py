@@ -1,6 +1,17 @@
-SCREEN_WIDTH      = 1280  
-SCREEN_HEIGHT     = 720   
-PLAYER_RADIUS     = 20    # The radius of the ship
-PLAYER_SPEED      = 200
-PLAYER_TURN_SPEED = 300
-LINE_WIDTH        = 2     # The width of the lines that draw the ship
+SCREEN_WIDTH  = 1280  
+SCREEN_HEIGHT = 720   
+
+LINE_WIDTH = 2 # The width of the lines that draw the ship
+
+PLAYER_RADIUS      = 20  # The radius of the ship
+PLAYER_SPEED       = 200
+PLAYER_TURN_SPEED  = 300
+PLAYER_SHOOT_SPEED = 500
+PLAYER_SHOOT_CD_S  = 0.3 # Shot cooldown seconds
+
+SHOT_RADIUS = 5
+
+ASTEROID_MIN_RADIUS         = 20
+ASTEROID_KINDS              = 3
+ASTEROID_SPAWN_RATE_SECONDS = 3
+ASTEROID_MAX_RADIUS         = ASTEROID_MIN_RADIUS * ASTEROID_KINDS
